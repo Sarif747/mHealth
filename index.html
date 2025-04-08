@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mhealth</title>
+  <style>
+    /* Global and Base Styles */
+    body {
+        font-family: 'Montserrat', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #F4F7F6; 
+        color: #62ad66;
+    }
+
+    /* Header Styles */
+    .header {
+        background-color: #62ad66; 
+        color: #FFFFFF;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 36px;
+        color: #FFFFFF;
+        font-weight: 700;
+    }
+
+    .header p {
+        margin: 10px 0 0;
+        font-size: 18px;
+        color: #D1E8E4;
+    }
+
+    /* Section Styles */
+    .section {
+        padding: 40px 20px;
+        background-color: #FFFFFF;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(44, 62, 80, 0.1);
+    }
+
+    /* Team Container Styles */
+    .team-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .team-member {
+        background-color: #E9F5F9; 
+        padding: 20px;
+        border-radius: 12px;
+        width: 220px;
+        border: 2px solid #1A5F7A;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(26, 95, 122, 0.1);
+    }
+
+    .team-member:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(26, 95, 122, 0.2);
+    }
+
+    .team-member .name {
+        margin-top: 10px;
+        font-weight: 600;
+        color: #1A5F7A;
+    }
+
+    .team-member .role {
+        font-size: 13px;
+        color: #2C3E50;
+        margin-top: 4px;
+    }
+
+    .linkedin-icon img {
+        width: 24px;
+        height: 24px;
+        margin-top: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .linkedin-icon img:hover {
+        transform: scale(1.2);
+    }
+
+    /* Projects Section Styles */
+    .projects {
+        background-color: #E9F5F9;
+        padding: 40px 20px;
+        border-top: 4px solid #1A5F7A;
+    }
+
+    /* Workflow Images Styles */
+    .workflow-images {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .workflow-images img {
+        max-width: 600px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(26, 95, 122, 0.2);
+        border: 2px solid #1A5F7A;
+    }
+
+    /* Footer Styles */
+    .footer {
+        background-color: #62ad66;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 20px;
+        font-weight: 300;
+    }
+
+    /* Team Advisor Container Styles */
+    .team-advisor-container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        align-items: flex-start;
+    }
+
+    /* Methodology Section Additional Styles */
+    .methodology-section {
+        background-color: #F4F7F6;
+        border-left: 6px solid #1A5F7A;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .methodology-header {
+        text-align: center;
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .methodology-highlight {
+        background-color: #f0f8ff;
+        padding: 15px;
+        border-left: 5px solid #007bff;
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 25px;
+    }
+
+    .methodology-subheader {
+        color: #007bff;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .methodology-list {
+        list-style-type: none;
+        padding-left: 0;
+        line-height: 1.8;
+    }
+
+    .methodology-list-item {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .methodology-list-item strong {
+        color: #333;
+    }
+
+    /* Project Section Styles */
+    .project-section {
+        font-family: 'Segoe UI', sans-serif;
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 25px;
+        background: #f8fafc;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .project-title {
+        color: #2b6cb0;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .project-description {
+        text-align: center;
+        color: #4a5568;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 8px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .project-card-title {
+        color: #2c5282;
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    .project-card-description {
+        color: #4a5568;
+        line-height: 1.6;
+    }
+
+    .project-features-title {
+        color: #4299e1;
+        font-size: 16px;
+    }
+
+    .project-features-list {
+        padding-left: 20px;
+        color: #4a5568;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .project-tag {
+        background: #ebf8ff;
+        color: #3182ce;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+    .project-impact {
+        margin-top: 20px;
+        font-style: italic;
+        color: #718096;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .team-advisor-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Data Science Application for Resilient Georgia</h1>
+    <p>Improving resilience by leveraging data science</p>
+  </div>
+
+  <div class="section">
+    <div class="team-advisor-container">
+      <div class="team-section">
+        <h2>Team</h2>
+        <div class="team-container">
+          <div class="team-member">
+            <img src="F:\mHealth-main\picture\Arif.jpg"
+                 alt="Mohmmad Arif Shaik"
+                 style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%;">
+            <div class="name">Mohmmad Arif Shaik</div>
+            <div class="role">Graduate Research Assistant</div>
+            <div class="role">Department of Information Technology</div>
+            <div class="role">Kennesaw State University</div>
+            <div class="role">mshaik@students.kennesaw.edu</div>
+            <a class="linkedin-icon" href="https://www.linkedin.com/in/mohmmadarifshaik-a33995175" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="advisor-section">
+        <h2>Advisor</h2>
+        <div class="team-container">
+          <div class="team-member">
+            <img src="F:\mHealth-main\picture\ns.jpeg"
+                 alt="Dr. Nazmus Sakib"
+                 style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%;">
+            <div class="name">Dr. Nazmus Sakib</div>
+            <div class="role">Assistant Professor</div>
+            <div class="role">Department of Information Technology</div>
+            <div class="role">Kennesaw State University</div>
+            <div class="role">nsakib1@kennesaw.edu</div>
+            <a class="linkedin-icon" href="https://www.linkedin.com/in/nazmus-sakib-032718b8/" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="methodology-header">Methodology - DSMA for Resilient Georgia</h2>
+
+    <div class="methodology-highlight">
+        This study employs a mixed-methods approach combining synthetic ACE data analysis with stakeholder feedback to develop and evaluate the DSMA's AI-powered dashboard system for optimizing trauma-informed resource allocation and tracking intervention effectiveness.
+    </div>
+    
+    <h3 class="methodology-subheader">Key Components</h3>
+    <ul class="methodology-list">
+        <li class="methodology-list-item">
+            <strong>Data Collection:</strong> Synthetic RG datasets mirroring real-world distributions
+        </li>
+        <li class="methodology-list-item">
+            <strong>Tools:</strong> Python, Dash, Plotly, SQLAlchemy, LangChain and OpenAI API
+        </li>
+        <li class="methodology-list-item">
+            <strong>Analysis:</strong> Quantitative and Qualitative metrics on training data + survey reports 
+        </li>
+        <li class="methodology-list-item">
+            <strong>Output:</strong> Interactive dashboards with heatmaps, training effectiveness tracking and AI powered chat box for data insights
+        </li>
+        <li class="methodology-list-item">
+            <strong>Evaluation:</strong> Measures both short-term and long-term systemic impact to remove intergenerational trauma
+        </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>This is Workflow</h2>
+    <div class="workflow-images">
+      <div class="image-container">
+        <p class="image-label">Road Map</p>
+        <img src="F:\mHealth-main\picture\Road_map.png" alt="Workflow Diagram 1">
+      </div>
+      <div class="image-container">
+        <p class="image-label">DSMA Pipeline</p>
+        <img src="F:\mHealth-main\picture\pipeline.jpg" alt="Workflow Diagram 2">
+      </div>
+      <div class="image-container">
+        <p class="image-label">Features and Sub-features</p>
+        <img src="F:\mHealth-main\picture\features.jpg" alt="Workflow Diagram 2">
+      </div>
+    </div>
+  </div>
+
+  <div class="projects project-section">
+    <h2 class="project-title">Our Project</h2>
+    <p class="project-description">
+        Transforming trauma-informed care through data science and interactive analytics to combat Adverse Childhood Experiences (ACEs).
+    </p>
+
+    <div class="project-card">
+        <h3 class="project-card-title">🚀 Data Science Management Application (DSMA)</h3>
+        <p class="project-card-description">
+            An AI-powered dashboard system for <strong>Resilient Georgia</strong> that visualizes ACE prevalence, tracks trauma-informed care adoption, and optimizes resource allocation through real-time analytics.
+        </p>
+        
+        <div>
+            <h4 class="project-features-title">Key Features:</h4>
+            <ul class="project-features-list">
+                <li><strong>Interactive Heatmaps:</strong> Geographic visualization of ACE risk factors across Georgia</li>
+                <li><strong>AI Risk Assessment:</strong> Personalized ACE scoring with intervention recommendations</li>
+                <li><strong>Adoption Trackers:</strong> Sector-specific monitoring of trauma-informed practices</li>
+                <li><strong>Natural Language Queries:</strong> OpenAI-powered insights for non-technical users</li>
+            </ul>
+        </div>
+
+        <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Dash/Plotly</span>
+            <span class="project-tag">SQLAlchemy</span>
+            <span class="project-tag">OpenAI API</span>
+            <span class="project-tag">Lang Chain</span>
+            <span class="project-tag">Trauma-Informed Care</span>
+        </div>
+
+        <div class="project-impact">
+            <strong>Impact:</strong> Enabled data-driven policy decisions making to tackle intergenerational trauma
+        </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Mhealth. All rights reserved.</p>
+  </div>
+
+</body>
+</html>
